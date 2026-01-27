@@ -4,7 +4,9 @@ auth.onAuthStateChanged(user => {
   } else {
     showLogin();
   }
+  document.body.style.visibility = "visible";
 });
+
 
 function showSignup() {
   document.getElementById("loginPage").style.display = "none";
