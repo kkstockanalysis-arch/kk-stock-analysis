@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KK STOCK ANALYSIS - Login</title>
+
+  <!-- Mobile friendly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      min-height: 100vh;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1a237e;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 16px;
+      background-color: #1a237e;
+      color: white;
+      border: none;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- LOGIN PAGE -->
+<div class="container" id="loginPage">
+  <h2>KK STOCK ANALYSIS</h2>
+
+  <input type="email" placeholder="Email" />
+  <input type="password" placeholder="Password" />
+
+  <button>Login</button>
+
+  <p>
+  New user?
+  <span style="color:blue;cursor:pointer;" onclick="showSignup()">Sign up</span>
+</p>
+
+</div>
+
+<!-- SIGN UP PAGE -->
+<div class="container" id="signupPage" style="display:none;">
+  <h2>Create Account</h2>
+
+  <input type="email" placeholder="Email" />
+  <input type="password" placeholder="Password" />
+
+  <button>Sign Up</button>
+
+  <p>
+  Already have an account?
+  <span style="color:blue;cursor:pointer;" onclick="showLogin()">Login</span>
+</p>
+
+</div>
+
+</body>
+
+<script>
+  function showSignup() {
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("signupPage").style.display = "block";
+  }
+
+  function showLogin() {
+    document.getElementById("signupPage").style.display = "none";
+    document.getElementById("loginPage").style.display = "block";
+  }
+</script>
+
+</html>
