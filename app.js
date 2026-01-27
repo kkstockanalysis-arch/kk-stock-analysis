@@ -25,7 +25,10 @@ function showDashboard() {
   document.getElementById("signupPage").style.display = "none";
   document.getElementById("dashboardPage").style.display = "block";
   clearMessage();
+
+  loadStockPrice(); // 👈 ADD THIS LINE
 }
+
 
 function signup() {
   const email = document.getElementById("signupEmail").value;
@@ -71,6 +74,24 @@ function clearMessage() {
   document.querySelectorAll("#message").forEach(m => m.innerText = "");
 }
 
+const STOCK_SYMBOL = "IBM"; // change later or from Firebase
+const API_KEY = "AF0LTS0R7PH4GH7Z";
+
+function loadStockPrice() {
+  const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${STOCK_SYMBOL}&apikey=${API_KEY}`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const price = data["Global Quote"]["05. price"];
+      document.getElementById("stockName").innerText = STOCK_SYMBOL;
+      document.getElementById("stockPrice").innerText = price;
+    })
+    .catch(error => {
+      document.getElementById("stockPrice").innerText = "Error";
+      console.error(error);
+    });
+}
 
 
 
