@@ -114,6 +114,40 @@ function loadStockPrice() {
     });
 }
 
+function loadCandleData() {
+  const url = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${STOCK_SYMBOL}&interval=5min&apikey=${API_KEY}`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const candles = data["Time Series (5min)"];
+
+      if (!candles) {
+        console.log("Candle data not available");
+        return;
+      }
+
+      // Convert object to array
+      const candleArray = Object.keys(candles).map(time => {
+        return {
+          time: time,
+          open: parseFloat(candles[time]["1. open"]),
+          high: parseFloat(candles[time]["2. high"]),
+          low: parseFloat(candles[time]["3. low"]),
+          close: parseFloat(candles[time]["4. close"])
+        };
+      });
+
+      console.log("Candles:", candleArray);
+
+      // 🔴 FUTURE: your candle logic will go here
+      // checkCandleAlert(candleArray);
+
+    })
+    .catch(error => {
+      console.error("Candle error:", error);
+    });
+}
 
 
 
