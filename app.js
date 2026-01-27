@@ -1,3 +1,11 @@
+auth.onAuthStateChanged(user => {
+  if (user) {
+    showDashboard();
+  } else {
+    showLogin();
+  }
+});
+
 function showSignup() {
   document.getElementById("loginPage").style.display = "none";
   document.getElementById("signupPage").style.display = "block";
@@ -61,13 +69,7 @@ function clearMessage() {
   document.querySelectorAll("#message").forEach(m => m.innerText = "");
 }
 
-auth.onAuthStateChanged(user => {
-  if (user) {
-    showDashboard();
-  } else {
-    showLogin();
-  }
-});
+
 
 
 
