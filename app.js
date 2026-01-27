@@ -20,15 +20,25 @@ function showLogin() {
   clearMessage();
 }
 
+let priceInterval = null;
+
 function showDashboard() {
   document.getElementById("loginPage").style.display = "none";
   document.getElementById("signupPage").style.display = "none";
   document.getElementById("dashboardPage").style.display = "block";
   clearMessage();
 
-  loadStockPrice(); // 👈 ADD THIS LINE
-}
+  loadStockPrice(); // first load
 
+  // 🔁 auto refresh every 60 seconds
+  if (priceInterval) {
+    clearInterval(priceInterval);
+  }
+
+  priceInterval = setInterval(() => {
+    loadStockPrice();
+  }, 60000); // 60 seconds
+}
 
 function signup() {
   const email = document.getElementById("signupEmail").value;
@@ -61,6 +71,17 @@ function logout() {
     showLogin();
   });
 }
+
+//function logout() {
+//  if (priceInterval) {
+//    clearInterval(priceInterval);
+//  }
+//
+//  auth.signOut().then(() => {
+// showLogin();
+ // });
+// }
+
 
 function showMessage(text, color) {
   const messages = document.querySelectorAll("#message");
