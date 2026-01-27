@@ -1,3 +1,7 @@
+let candleSeries = null;
+let chart = null;
+
+
 auth.onAuthStateChanged(user => {
   if (user) {
     showDashboard();
@@ -40,6 +44,35 @@ function showDashboard() {
     loadStockPrice();
   }, 60000); // 60 seconds
 }
+
+function drawCandleChart(candles) {
+  if (!chart) {
+    chart = LightweightCharts.createChart(
+      document.getElementById("candleChart"),
+      {
+        width: document.getElementById("candleChart").clientWidth,
+        height: 300,
+        layout: {
+          background: { color: "#ffffff" },
+          textColor: "#000"
+        },
+        grid: {
+          vertLines: { color: "#eee" },
+          horzLines: { color: "#eee" }
+        },
+        timeScale: {
+          timeVisible: true,
+          secondsVisible: false
+        }
+      }
+    );
+
+    candleSeries = chart.addCandlestickSeries();
+  }
+
+  candleSeries.setData(candles);
+}
+
 
 function signup() {
   const email = document.getElementById("signupEmail").value;
@@ -131,13 +164,15 @@ function loadCandleData() {
       // Convert object to array
       const candleArray = Object.keys(candles).map(time => {
         return {
-          time: time,
-          open: parseFloat(candles[time]["1. open"]),
-          high: parseFloat(candles[time]["2. high"]),
-          low: parseFloat(candles[time]["3. low"]),
-          close: parseFloat(candles[time]["4. close"])
+        time: time,
+        open: parseFloat(candles[time]["1. open"]),
+        high: parseFloat(candles[time]["2. high"]),
+        low: parseFloat(candles[time]["3. low"]),
+        close: parseFloat(candles[time]["4. close"])
         };
-      });
+        }).reverse(); // oldest → newest
+
+      drawCandleChart(candleArray);
 
       console.log("Candles:", candleArray);
 
