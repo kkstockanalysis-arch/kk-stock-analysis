@@ -36,5 +36,17 @@ button {
 }
 
 p {
-  text-ali
+  text-align: center;
+  margin-top: 20px;
+}
 
+span {
+  color: blue;
+  cursor: pointer;
+}
+
+#message {
+  text-align: center;
+  margin-top: 15px;
+  color: red;
+}
