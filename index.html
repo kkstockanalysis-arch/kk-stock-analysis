@@ -57,9 +57,10 @@
   </div>
 
   <!-- Chart placeholder -->
-  <div id="chartSection" style="margin-top:20px;">
-    <p>Candlestick chart will appear here</p>
-  </div>
+ <div id="chartSection" style="margin-top:20px;">
+  <div id="candleChart" style="width:100%; height:300px;"></div>
+</div>
+
 
   <button onclick="logout()">Logout</button>
 </div>
@@ -70,9 +71,13 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 
   <!-- PROJECT FILES -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
   <script src="firebase.js"></script>
   <script src="app.js"></script>
 
 </body>
 </html>
+
 
