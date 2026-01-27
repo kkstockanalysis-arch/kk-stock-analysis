@@ -50,6 +50,23 @@
   </style>
 </head>
 
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<script>
+  // PASTE firebaseConfig HERE
+  const firebaseConfig = {
+  apiKey: "AIzaSyCHxK7Zg-JJB4fYiXe2J_Z-wcLeTIdDm1c",
+  authDomain: "kk-stock-analysis-d7b43.firebaseapp.com",
+  projectId: "kk-stock-analysis-d7b43",
+  storageBucket: "kk-stock-analysis-d7b43.firebasestorage.app",
+  messagingSenderId: "338926544975",
+  appId: "1:338926544975:web:f1598c672a002f706ca23a"
+};
+</script>
+
+
 <body>
   <!-- LOGIN PAGE -->
 <div class="container" id="loginPage">
@@ -85,16 +102,5 @@
 
 </body>
 
-<script>
-  function showSignup() {
-    document.getElementById("loginPage").style.display = "none";
-    document.getElementById("signupPage").style.display = "block";
-  }
-
-  function showLogin() {
-    document.getElementById("signupPage").style.display = "none";
-    document.getElementById("loginPage").style.display = "block";
-  }
-</script>
-
 </html>
+
