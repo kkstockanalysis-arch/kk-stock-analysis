@@ -61,3 +61,16 @@ function clearMessage() {
   document.querySelectorAll("#message").forEach(m => m.innerText = "");
 }
 
+auth.onAuthStateChanged(user => {
+  if (user) {
+    showDashboard();
+  } else {
+    showLogin();
+  }
+});
+
+
+
+
+
+
