@@ -29,6 +29,7 @@ function showDashboard() {
   clearMessage();
 
   loadStockPrice(); // first load
+  loadCandleData();
 
   // 🔁 auto refresh every 60 seconds
   if (priceInterval) {
