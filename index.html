@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>KK STOCK ANALYSIS - Login</title>
+  <title>KK STOCK ANALYSIS</title>
 
-  <!-- Mobile friendly -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -41,22 +40,70 @@
       background-color: #1a237e;
       color: white;
       border: none;
+      cursor: pointer;
     }
 
     p {
       text-align: center;
       margin-top: 20px;
     }
+
+    span {
+      color: blue;
+      cursor: pointer;
+    }
+
+    #message {
+      text-align: center;
+      margin-top: 15px;
+      color: red;
+    }
   </style>
 </head>
 
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<body>
 
-<script>
-  // PASTE firebaseConfig HERE
-  const firebaseConfig = {
+  <!-- LOGIN PAGE -->
+  <div class="container" id="loginPage">
+    <h2>KK STOCK ANALYSIS</h2>
+
+    <input type="email" id="loginEmail" placeholder="Email" />
+    <input type="password" id="loginPassword" placeholder="Password" />
+
+    <button onclick="login()">Login</button>
+
+    <p>
+      New user?
+      <span onclick="showSignup()">Sign up</span>
+    </p>
+
+    <div id="message"></div>
+  </div>
+
+  <!-- SIGN UP PAGE -->
+  <div class="container" id="signupPage" style="display:none;">
+    <h2>Create Account</h2>
+
+    <input type="email" id="signupEmail" placeholder="Email" />
+    <input type="password" id="signupPassword" placeholder="Password" />
+
+    <button onclick="signup()">Sign Up</button>
+
+    <p>
+      Already have an account?
+      <span onclick="showLogin()">Login</span>
+    </p>
+
+    <div id="message"></div>
+  </div>
+
+  <!-- FIREBASE SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <!-- FIREBASE CONFIG -->
+  <script>
+    const firebaseConfig = {
   apiKey: "AIzaSyCHxK7Zg-JJB4fYiXe2J_Z-wcLeTIdDm1c",
   authDomain: "kk-stock-analysis-d7b43.firebaseapp.com",
   projectId: "kk-stock-analysis-d7b43",
@@ -64,43 +111,22 @@
   messagingSenderId: "338926544975",
   appId: "1:338926544975:web:f1598c672a002f706ca23a"
 };
-</script>
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+  </script>
+
+  <!-- APP LOGIC -->
+  <script>
+    function showSignup() {
+      document.getElementById("loginPage").style.display = "none";
+      document.getElementById("signupPage").style.display = "block";
+      clearMessage();
+    }
+
+    function showLogin() {
+      document.getElementById("signupPage").style.display = "none";
+      document.getElementById("loginPage").style.display = "block";
 
 
-<body>
-  <!-- LOGIN PAGE -->
-<div class="container" id="loginPage">
-  <h2>KK STOCK ANALYSIS</h2>
-
-  <input type="email" placeholder="Email" />
-  <input type="password" placeholder="Password" />
-
-  <button>Login</button>
-
-  <p>
-  New user?
-  <span style="color:blue;cursor:pointer;" onclick="showSignup()">Sign up</span>
-</p>
-
-</div>
-
-<!-- SIGN UP PAGE -->
-<div class="container" id="signupPage" style="display:none;">
-  <h2>Create Account</h2>
-
-  <input type="email" placeholder="Email" />
-  <input type="password" placeholder="Password" />
-
-  <button>Sign Up</button>
-
-  <p>
-  Already have an account?
-  <span style="color:blue;cursor:pointer;" onclick="showLogin()">Login</span>
-</p>
-
-</div>
-
-</body>
-
-</html>
 
