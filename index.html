@@ -47,12 +47,23 @@
   </div>
 
   <!-- DASHBOARD PAGE -->
-  <div class="container" id="dashboardPage" style="display:none;">
-    <h2>Dashboard</h2>
-    <p>Welcome to KK STOCK ANALYSIS</p>
+<div class="container" id="dashboardPage" style="display:none;">
+  <h2>Stock Dashboard</h2>
 
-    <button onclick="logout()">Logout</button>
+  <!-- Stock Info -->
+  <div id="stockSection">
+    <p><strong>Stock:</strong> <span id="stockName">—</span></p>
+    <p><strong>Live Price:</strong> <span id="stockPrice">—</span></p>
   </div>
+
+  <!-- Chart placeholder -->
+  <div id="chartSection" style="margin-top:20px;">
+    <p>Candlestick chart will appear here</p>
+  </div>
+
+  <button onclick="logout()">Logout</button>
+</div>
+
 
   <!-- FIREBASE SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -64,3 +75,4 @@
 
 </body>
 </html>
+
