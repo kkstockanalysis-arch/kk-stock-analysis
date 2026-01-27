@@ -1,20 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-  <link rel="stylesheet" href="style.css">
-  
+  <meta charset="UTF-8">
   <title>KK STOCK ANALYSIS</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-
-<script src="firebase.js"></script>
-<script src="app.js"></script>
 
 <body>
 
@@ -22,8 +16,8 @@
   <div class="container" id="loginPage">
     <h2>KK STOCK ANALYSIS</h2>
 
-    <input type="email" id="loginEmail" placeholder="Email" />
-    <input type="password" id="loginPassword" placeholder="Password" />
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
 
     <button onclick="login()">Login</button>
 
@@ -39,8 +33,8 @@
   <div class="container" id="signupPage" style="display:none;">
     <h2>Create Account</h2>
 
-    <input type="email" id="signupEmail" placeholder="Email" />
-    <input type="password" id="signupPassword" placeholder="Password" />
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="password" id="signupPassword" placeholder="Password">
 
     <button onclick="signup()">Sign Up</button>
 
@@ -52,14 +46,21 @@
     <div id="message"></div>
   </div>
 
+  <!-- DASHBOARD PAGE -->
+  <div class="container" id="dashboardPage" style="display:none;">
+    <h2>Dashboard</h2>
+    <p>Welcome to KK STOCK ANALYSIS</p>
+
+    <button onclick="logout()">Logout</button>
+  </div>
+
   <!-- FIREBASE SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <!-- PROJECT FILES -->
   <script src="firebase.js"></script>
   <script src="app.js"></script>
 
-<html>
-
-
-
-
+</body>
+</html>
