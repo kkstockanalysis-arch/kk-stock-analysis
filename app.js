@@ -2,8 +2,7 @@ auth.onAuthStateChanged(user => {
   if (user) {
     showDashboard();
   } else {
-    //showLogin();MY WORK CHANGE AFETER THAT
-    showDashboard();
+    showLogin();
   }
 });
 
