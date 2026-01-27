@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <link rel="stylesheet" href="style.css">
+
+  
   <title>KK STOCK ANALYSIS</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,6 +64,12 @@
     }
   </style>
 </head>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
 
 <body>
 
@@ -127,6 +137,7 @@
     function showLogin() {
       document.getElementById("signupPage").style.display = "none";
       document.getElementById("loginPage").style.display = "block";
+
 
 
 
