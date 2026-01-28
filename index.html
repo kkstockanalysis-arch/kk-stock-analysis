@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>KK STOCK ANALYSIS</title>
-
+  <title>KK Stock Analysis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- CSS -->
@@ -12,8 +11,64 @@
 
 <body>
 
-  
+  <!-- ================= LOGIN PAGE ================= -->
+  <div id="loginPage">
+    <h2>Login</h2>
 
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+
+    <button>Login</button>
+
+    <p class="link">New user? Sign up</p>
+  </div>
+
+  <!-- ================= SIGNUP PAGE ================= -->
+  <div id="signupPage" style="display:none;">
+    <h2>Sign Up</h2>
+
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+
+    <button>Sign Up</button>
+
+    <p class="link">Already have an account? Login</p>
+  </div>
+
+  <!-- ================= DASHBOARD ================= -->
+  <div id="dashboardPage" style="display:none;">
+
+    <h2>KK STOCK ANALYSIS</h2>
+
+    <!-- -------- STOCK PAGE -------- -->
+    <div id="stockPage">
+      <h3>Stock Page</h3>
+
+      <p><strong>Stock Name:</strong> —</p>
+      <p><strong>Live Price:</strong> —</p>
+
+      <!-- Chart will come later -->
+      <div style="height:200px; border:1px dashed #ccc; margin-top:10px;">
+        Candlestick chart area
+      </div>
+    </div>
+
+    <!-- -------- ADMIN PANEL -------- -->
+    <div id="adminPage">
+      <h3>Admin Panel</h3>
+
+      <input type="text" placeholder="Enter Stock Symbol (RELIANCE.NS)">
+      <button>Add Stock</button>
+
+      <div style="margin-top:10px;">
+        <!-- Stock list will come later -->
+        Stock list area
+      </div>
+    </div>
+
+    <button style="margin-top:30px;">Logout</button>
+
+  </div>
 
   <!-- FIREBASE SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -25,9 +80,15 @@
   <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
   <script src="firebase.js"></script>
   <script src="app.js"></script>
-
+  
 </body>
 </html>
+
+
+
+  
+
+
 
 
 
