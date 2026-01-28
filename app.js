@@ -185,6 +185,11 @@ function loadCandleData() {
     });
 }
 
+function addStock() {
+  const symbol = document.getElementById("newStockSymbol").value;
+  document.getElementById("adminMessage").innerText =
+    "Stock added (logic coming next): " + symbol;
+}
 
 
 
