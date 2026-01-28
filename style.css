@@ -1,34 +1,40 @@
-
-body {
-  visibility: hidden;
+/* ===== GLOBAL ===== */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background-color: #f2f2f2;
 }
 
-.container {
-  max-width: 400px;
+/* ===== PAGE CONTAINERS ===== */
+#loginPage,
+#signupPage,
+#dashboardPage {
+  max-width: 420px;
   margin: auto;
   padding: 20px;
-  background: white;
+  background: #ffffff;
   min-height: 100vh;
 }
 
-h2 {
+/* ===== HEADINGS ===== */
+h2, h3 {
   text-align: center;
   color: #1a237e;
 }
 
+/* ===== INPUTS ===== */
 input {
   width: 100%;
   padding: 12px;
-  margin-top: 15px;
+  margin-top: 12px;
   font-size: 16px;
 }
 
+/* ===== BUTTONS ===== */
 button {
   width: 100%;
   padding: 12px;
@@ -40,18 +46,27 @@ button {
   cursor: pointer;
 }
 
-p {
-  text-align: center;
-  margin-top: 20px;
+button:hover {
+  background-color: #3949ab;
 }
 
-span {
+/* ===== LINKS ===== */
+.link {
   color: blue;
   cursor: pointer;
-}
-
-#message {
   text-align: center;
   margin-top: 15px;
-  color: red;
+}
+
+/* ===== DASHBOARD SECTIONS ===== */
+#stockPage,
+#adminPage {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+/* ===== ADMIN PANEL ===== */
+#adminPage input {
+  margin-top: 10px;
 }
